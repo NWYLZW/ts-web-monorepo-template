@@ -9,11 +9,12 @@
     "customConditions": ["node"]
   },
   "include": [
+    "../vitest.config.ts",
+    "../vitest.workspace.ts",
     "../website/vite.config.ts",
     "../apis/src/**/*",
     "../apis/tests/**/*",
     "../packages/utils/src/**/*.node.ts",
     "../packages/utils/tests/**/*.node.ts"
-  ],
-  "exclude": ["node_modules", "**/dist"]
+  ]
 }

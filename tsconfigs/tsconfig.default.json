@@ -7,6 +7,5 @@
   "include": [
     "../packages/utils/src/**/*.ts",
     "../packages/utils/tests/**/*.ts"
-  ],
-  "exclude": ["node_modules", "**/dist"]
+  ]
 }

@@ -2,6 +2,7 @@
   "name": "@mono/utils",
   "version": "0.1.0",
   "exports": {
+    "./package.json": "./package.json",
     ".": "./src/index.ts",
     "./bar": "./src/bar.ts",
     "./readFile": {

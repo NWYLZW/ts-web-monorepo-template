@@ -11,6 +11,9 @@ importers:
       '@types/node':
         specifier: ^18.19.44
         version: 18.19.44
+      picomatch:
+        specifier: ^4.0.2
+        version: 4.0.2
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -695,6 +698,11 @@ packages:
 
   /picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
+    dev: true
+
+  /picomatch@4.0.2:
+    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
+    engines: {node: '>=12'}
     dev: true
 
   /postcss@8.4.41:

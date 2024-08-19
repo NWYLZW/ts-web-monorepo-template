@@ -1,7 +1,7 @@
 {
   "name": "website",
   "scripts": {
-    "dev": "vite"
+    "start": "vite"
   },
   "dependencies": {
     "@mono/utils": "workspace:*"
