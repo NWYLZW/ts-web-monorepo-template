@@ -1,0 +1,12 @@
+{
+  "name": "website",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@mono/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

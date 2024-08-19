@@ -1,0 +1,12 @@
+{
+  "extends": ["./tsconfig.base.json"],
+  "compilerOptions": {
+    "composite": true,
+    "moduleResolution": "bundler"
+  },
+  "include": [
+    "../packages/utils/src/**/*.ts",
+    "../packages/utils/tests/**/*.ts"
+  ],
+  "exclude": ["node_modules", "**/dist"]
+}

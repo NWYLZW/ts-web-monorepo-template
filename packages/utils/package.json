@@ -1,0 +1,15 @@
+{
+  "name": "@mono/utils",
+  "version": "0.1.0",
+  "exports": {
+    ".": "./src/index.ts",
+    "./bar": "./src/bar.ts",
+    "./readFile": {
+      "node": "./src/readFile.node.ts",
+      "browser": "./src/readFile.browser.ts"
+    }
+  },
+  "devDependencies": {
+    "@mono/utils": "workspace:*"
+  }
+}

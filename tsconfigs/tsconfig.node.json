@@ -1,0 +1,19 @@
+{
+  "extends": ["./tsconfig.base.json"],
+  "compilerOptions": {
+    "composite": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    "moduleResolution": "bundler",
+    "types": ["node"],
+    "customConditions": ["node"]
+  },
+  "include": [
+    "../website/vite.config.ts",
+    "../apis/src/**/*",
+    "../apis/tests/**/*",
+    "../packages/utils/src/**/*.node.ts",
+    "../packages/utils/tests/**/*.node.ts"
+  ],
+  "exclude": ["node_modules", "**/dist"]
+}

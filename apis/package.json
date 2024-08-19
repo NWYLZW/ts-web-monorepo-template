@@ -1,0 +1,12 @@
+{
+  "name": "apis",
+  "scripts": {
+    "start": "node -r esbuild-register src/index.ts"
+  },
+  "dependencies": {
+    "@mono/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "esbuild-register": "^3.6.0"
+  }
+}
