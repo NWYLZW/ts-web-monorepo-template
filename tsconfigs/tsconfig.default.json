@@ -7,5 +7,11 @@
   "include": [
     "../packages/utils/src/**/*.ts",
     "../packages/utils/tests/**/*.ts"
+  ],
+  "exclude": [
+    "../**/*.browser.ts",
+    "../**/*.node.ts",
+    "../**/*.browser.spec.ts",
+    "../**/*.node.spec.ts"
   ]
 }
