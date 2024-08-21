@@ -29,12 +29,27 @@ for (const { path: p } of references) {
   referenceProjects.push([p, projectTSConfig])
 }
 
-export default defineWorkspace(referenceProjects.map(([path, config]) => ({
-  extends: './vitest.config.ts',
-  resolve: {
-    conditions: config.compilerOptions?.customConditions ?? ['default']
-  },
+export default defineWorkspace(referenceProjects.map(([path, tsconfig]) => ({
   test: {
-    include: config.include
-  }
+    include: tsconfig.include
+  },
+  ssr: {
+    target: tsconfig.compilerOptions?.customConditions?.includes('browser')
+      ? 'webworker'
+      : 'node'
+  },
+  plugins: [
+    {
+      name: 'anonymous:overrideConditions',
+      config: c => {
+        if (!c.resolve) {
+          c.resolve = {}
+        }
+        if (!c.resolve.conditions) {
+          c.resolve.conditions = []
+        }
+        c.resolve.conditions = tsconfig.compilerOptions?.customConditions ?? ['default']
+      },
+    }
+  ]
 })))
