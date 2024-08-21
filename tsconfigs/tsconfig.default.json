@@ -9,6 +9,7 @@
     "../packages/utils/tests/**/*.ts"
   ],
   "exclude": [
+    "../**/node_modules",
     "../**/*.browser.ts",
     "../**/*.node.ts",
     "../**/*.browser.spec.ts",
