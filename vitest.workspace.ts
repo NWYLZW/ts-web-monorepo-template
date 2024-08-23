@@ -23,9 +23,11 @@ for (const { path: p } of references) {
   projectTSConfig.include = projectTSConfig.include
     ?.map(i => path.resolve(path.dirname(relativePath), i))
     ?.map(i => i.replace(new RegExp(`^${process.cwd()}${path.sep}`), ''))
+    ?.filter(i => i.includes('.spec.'))
   projectTSConfig.exclude = projectTSConfig.exclude
     ?.map(i => path.resolve(path.dirname(relativePath), i))
     ?.map(i => i.replace(new RegExp(`^${process.cwd()}${path.sep}`), ''))
+    ?.filter(i => i.includes('.spec.'))
   referenceProjects.push([p, projectTSConfig])
 }
 
