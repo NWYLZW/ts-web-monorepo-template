@@ -1,5 +1,1 @@
-export function readFile() {
-  throw new Error('Not implemented')
-}
-
-export const name = 'readFile.browser'
+export const name = 'readFile.browser' as const
