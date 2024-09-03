@@ -10,3 +10,4 @@
 
 - 通过 `tsconfig.json` 的 `references` 来管理不同类型文件的类型相关规则
 - 针对于多样化包出口的需求，可采用 `exports` 配合支持的 condition 来实现
+- 同时对于不同的测试需求，这里也通过 tsconfig 中的相关约束进行配置生成
