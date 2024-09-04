@@ -2,8 +2,9 @@
   "private": true,
   "name": "ts-web-monorepo-template",
   "version": "1.0.0",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "packageManager": "pnpm@8.12.1",
+  "engines": {
+    "node": ">=18.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.19.45",
