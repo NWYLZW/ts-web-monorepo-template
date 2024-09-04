@@ -12,10 +12,6 @@
   "include": [
     "../website/src/**/*",
     "../website/tests/**/*",
-    "../packages/utils/src/**/*.browser.ts",
-    "../packages/utils/tests/**/*.browser.spec.ts"
-  ],
-  "exclude": [
-    "../**/node_modules"
+    "../packages/utils/src/**/*.browser.ts"
   ]
 }

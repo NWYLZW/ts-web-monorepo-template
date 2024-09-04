@@ -1,0 +1,9 @@
+{
+  "extends": ["./tsconfig.browser.json"],
+  "compilerOptions": {
+    "composite": true
+  },
+  "include": [
+    "../packages/utils/tests/**/*.browser.spec.ts"
+  ]
+}
