@@ -5,14 +5,6 @@
     "moduleResolution": "bundler"
   },
   "include": [
-    "../packages/utils/src/**/*.ts",
-    "../packages/utils/tests/**/*.ts"
-  ],
-  "exclude": [
-    "../**/node_modules",
-    "../**/*.browser.ts",
-    "../**/*.node.ts",
-    "../**/*.browser.spec.ts",
-    "../**/*.node.spec.ts"
+    "../packages/utils/src/**/*.ts"
   ]
 }

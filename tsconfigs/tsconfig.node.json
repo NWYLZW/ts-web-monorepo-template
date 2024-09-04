@@ -14,10 +14,6 @@
     "../website/vite.config.ts",
     "../apis/src/**/*",
     "../apis/tests/**/*",
-    "../packages/utils/src/**/*.node.ts",
-    "../packages/utils/tests/**/*.node.spec.ts"
-  ],
-  "exclude": [
-    "../**/node_modules"
+    "../packages/utils/src/**/*.node.ts"
   ]
 }

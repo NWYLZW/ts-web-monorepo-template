@@ -1,0 +1,9 @@
+{
+  "extends": ["./tsconfig.default.json"],
+  "compilerOptions": {
+    "composite": true
+  },
+  "include": [
+    "../packages/utils/tests/**/*.ts"
+  ]
+}
