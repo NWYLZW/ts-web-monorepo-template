@@ -7,4 +7,4 @@ console.log(name)
 
 console.log(foo(), bar())
 
-document.querySelector('#app')!.innerHTML = 'Hello, World!'
+import '#~/main.ts'
