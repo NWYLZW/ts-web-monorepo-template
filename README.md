@@ -47,3 +47,10 @@
   有些代码可能会在浏览器和 Node.js 环境下都会运行，对于不满足上述规则的都可以归类于此。
 
 出于上述考量，我们就可以按照不同的文件命名规则来划分不同 tsconfig，其次在包中导出依赖的时候根据导出文件的使用范围，合理采用不同的条件导出。
+
+## 相关
+
+一些朋友在看了本项目后推荐的一些相关资料（没想到也有和我有着类似思考方式的）：
+
+- [TypeScript Monorepo 的多种实践方式](https://github.com/colinhacks/live-typescript-monorepo)
+- [Esbuild 中的 project reference 实践方式](https://github.com/evanw/esbuild/issues/1250#issuecomment-1463826174)
