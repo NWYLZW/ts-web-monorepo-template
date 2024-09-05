@@ -12,6 +12,6 @@
   "include": [
     "../website/src/**/*",
     "../website/tests/**/*",
-    "../packages/utils/src/**/*.browser.ts"
+    "../packages/*/src/**/*.browser.ts"
   ]
 }

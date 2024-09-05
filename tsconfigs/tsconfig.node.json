@@ -14,6 +14,6 @@
     "../website/vite.config.ts",
     "../apis/src/**/*",
     "../apis/tests/**/*",
-    "../packages/utils/src/**/*.node.ts"
+    "../packages/*/src/**/*.node.ts"
   ]
 }

@@ -4,6 +4,6 @@
     "composite": true
   },
   "include": [
-    "../packages/utils/tests/**/*.browser.spec.ts"
+    "../packages/*/tests/**/*.browser.spec.ts"
   ]
 }
