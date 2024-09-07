@@ -50,7 +50,17 @@
 
 ### 工具链
 
-- Linter: ESLint，这里使用 @antfu/eslint-config 作为默认配置，你可以使用 `pnpm dlx @antfu/eslint-config@latest` 调整为你需要的具体项目配置。
+- Linter: [ESLint](https://eslint.org/)
+
+  这里使用 @antfu/eslint-config 作为默认配置，你可以使用 `pnpm dlx @antfu/eslint-config@latest` 调整为你需要的具体项目配置。
+
+  配置文件位置 `eslint.config.mjs`。
+
+- Formatter: [Dprint](https://dprint.dev/)
+
+  这里默认安装与配置了 typescript、json、markdown、toml、css 以及其他的 css 预编译语言的插件，如果有需要可以自行删除安装。
+
+  配置文件位置 `dprint.json`。
 
 ## 相关
 
