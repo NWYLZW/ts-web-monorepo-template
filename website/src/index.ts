@@ -3,8 +3,9 @@ import { bar } from '@mono/utils/bar'
 import { name } from '@mono/utils/readFile'
 //       ^?
 
-console.log(name)
-
-console.log(foo(), bar())
-
 import '#~/main.ts'
+
+// eslint-disable-next-line no-console
+console.log(name)
+// eslint-disable-next-line no-console
+console.log(foo(), bar())
