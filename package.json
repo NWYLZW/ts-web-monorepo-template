@@ -7,8 +7,10 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^3.3.2",
     "@types/node": "^18.19.45",
     "typescript": "^5.5.4",
-    "vitest": "^2.0.5"
+    "vitest": "^2.0.5",
+    "eslint": "^9.9.1"
   }
 }
