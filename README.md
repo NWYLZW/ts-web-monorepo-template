@@ -1,4 +1,4 @@
-# TypeScript web monorepo template
+# TypeScript Web Monorepo Template
 
 用于在 monorepo 架构下快速开发 web 应用的模版项目。
 
@@ -61,6 +61,11 @@
   这里默认安装与配置了 typescript、json、markdown、toml、css 以及其他的 css 预编译语言的插件，如果有需要可以自行删除安装。
 
   配置文件位置 `dprint.json`。
+
+## 待补充完善部分
+
+- [ ] 前后端共享文件类型
+- [ ] 单元测试工具函数文件类型
 
 ## 相关
 
