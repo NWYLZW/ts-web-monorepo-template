@@ -75,7 +75,7 @@ Q: 为什么将单元测试单独分开？
 
 A: 类型污染，单元测试往往会依赖 @types/node 这间接导致你包括了单元测试文件的 tsconfig project 都会被 node 的类型污染，以及其他的类型污染。
 
-参考资料：[ambient module declaration](https://www.typescriptlang.org/docs/handbook/modules/reference.html#:~:text=Ambient%20modules.%20TypeScript%20supports%20a%20syntax%20in%20script)
+参考资料：[Ambient Module Declaration](https://www.typescriptlang.org/docs/handbook/modules/reference.html#:~:text=Ambient%20modules.%20TypeScript%20supports%20a%20syntax%20in%20script)
 
 ## 待补充完善部分
 
