@@ -62,6 +62,21 @@
 
   配置文件位置 `dprint.json`。
 
+## Q&A
+
+Q: 为什么不用 tsconfig paths？
+
+A: 有多点：
+- 不够标准为主要原因，由此导致很多 bundler 工具并不默认支持，因此需要用户根据自己的 bundler 去安装相应的插件。
+- 没办法利用 conditional exports、imports。导致在部分较为常见场景处理起来不好用，比如无法使用一个路径，根据具体的文件选择不同内容导出。
+- 在 monorepo 常见，如果 tsconfig 的配置复杂，维护起来会比较困难。
+
+Q: 为什么将单元测试单独分开？
+
+A: 类型污染，单元测试往往会依赖 @types/node 这间接导致你包括了单元测试文件的 tsconfig project 都会被 node 的类型污染，以及其他的类型污染。
+
+参考资料：[ambient module declaration](https://www.typescriptlang.org/docs/handbook/modules/reference.html#:~:text=Ambient%20modules.%20TypeScript%20supports%20a%20syntax%20in%20script)
+
 ## 待补充完善部分
 
 - [ ] 前后端共享文件类型
