@@ -68,6 +68,7 @@ Q: 为什么不用 tsconfig paths？
 
 A: 有多点：
 - 不够标准为主要原因，由此导致很多 bundler 工具并不默认支持，因此需要用户根据自己的 bundler 去安装相应的插件。
+- 在 monorepo 的环境下，如果使用 paths 且存在多份 tsconfig，那么你还需要告诉你的打包器应该用哪个 tsconfig，这样会导致你的打包器的配置变得复杂。
 - 没办法利用 conditional exports、imports。导致在部分较为常见场景处理起来不好用，比如无法使用一个路径，根据具体的文件选择不同内容导出。
 - 在 monorepo 环境下，如果 tsconfig 的配置复杂，每一个包可能都需要一个 tsconfig，或者有部分包需要一个特殊的 tsconfig，但是 paths 或者 rootdir 或者其他影响路径的配置，都会导致你的 paths 要在每一个这样的场景下复制一遍。
 
