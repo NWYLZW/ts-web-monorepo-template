@@ -6,11 +6,15 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "scripts": {
+    "echo-hi": "node -r esbuild-register ./scripts/echo-hi.ts"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^3.3.2",
     "@types/node": "^18.19.45",
     "dprint": "^0.47.2",
     "eslint": "^9.9.1",
+    "esbuild-register": "^3.6.0",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5"
   }

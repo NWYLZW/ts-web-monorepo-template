@@ -37,8 +37,7 @@
 
   不过虽然我们的直接运行的 ts 并没有 bundler，但是实际上来说 Node.js 18 已经支持了 `exports` 的特性，所以我们可以通过 `exports` 来进行导出。
 
-  - 配置文件，比如 `vitest.config.ts` 等。这些文件实际上的运行环境是 Node.js，所以这里我们也分类为该运行时
-  - 如果你存在运行在 Node.js 的脚本等类似的代码，你也可以添加到对应的 Node.js 对应的 tsconfig 中
+  - 配置、脚本文件，比如 `vitest.config.ts` 等。这些文件实际上的运行环境是 Node.js，所以这里我们也分类为该运行时
   - `.node.ts` 结尾以及 apis 目录下为 Node.js 环境
   - `.node.spec.ts` 结尾的为测试环境
   - 添加 `node` 的 conditional 用于激活特定的 export，针对于 Node.js 环境你还有需要的 conditional 可以自行添加

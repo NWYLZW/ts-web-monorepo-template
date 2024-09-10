@@ -9,6 +9,7 @@
     "customConditions": ["node"]
   },
   "include": [
+    "../scripts/**/*.ts",
     "../vitest.config.ts",
     "../vitest.workspace.ts",
     "../website/vite.config.ts",
