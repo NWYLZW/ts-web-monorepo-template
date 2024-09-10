@@ -78,6 +78,10 @@ A: 类型污染，单元测试往往会依赖 @types/node 这间接导致你包�
 
 参考资料：[Ambient Module Declaration](https://www.typescriptlang.org/docs/handbook/modules/reference.html#:~:text=Ambient%20modules.%20TypeScript%20supports%20a%20syntax%20in%20script)
 
+Q: 为什么不弄多个 tsconfig 在每个包下面？
+
+A: 麻烦，你要写多个，然后不断的 extends，维护成本也很高。不是一种好的实践。
+
 ## 待补充完善部分
 
 - [ ] 前后端共享文件类型
