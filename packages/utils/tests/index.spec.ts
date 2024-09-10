@@ -1,8 +1,8 @@
 import { foo } from '@mono/utils'
-import { describe, expect, test } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
-describe('mono utils', function () {
-  test('foo', function () {
+describe('mono utils', () => {
+  it('foo', () => {
     expect(foo()).toBe('foo')
   })
 })
