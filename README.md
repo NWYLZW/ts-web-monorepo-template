@@ -104,3 +104,8 @@ A: 对于一个现代化并完善的前端项目来说，我们必然有几个�
 
 - [TypeScript Monorepo 的多种实践方式](https://github.com/colinhacks/live-typescript-monorepo)
 - [Esbuild 中的 project reference 实践方式](https://github.com/evanw/esbuild/issues/1250#issuecomment-1463826174)
+
+参考资料：
+
+- [Node.js 中的条件导出](https://nodejs.org/api/packages.html#conditional-exports)
+- [TypeScript 中的模块解析策略](https://www.typescriptlang.org/docs/handbook/modules/reference.html#the-moduleresolution-compiler-option)
