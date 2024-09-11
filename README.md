@@ -16,7 +16,7 @@
 
 ## 项目规范
 
-本项目指在对类型系统进行规范借鉴，故在技术栈的选型上主要为示范性作用，很多工具链的配置改造成本较低，如果你需要进行自己的技术选型，建议开发过程中按照相应的规则进行调整。
+本项目指在对**类型系统**进行规范借鉴，故在技术栈的选型上主要为示范性作用，很多工具链的配置改造成本较低，如果你需要进行自己的技术选型，建议开发过程中按照相应的规则进行调整。
 
 ### 项目结构
 
@@ -102,6 +102,7 @@ A: 对于一个现代化并完善的前端项目来说，我们必然有几个�
 
 一些朋友在看了本项目后推荐的一些相关资料（没想到也有和我有着类似思考方式的）：
 
+- [tshy](https://github.com/isaacs/tshy)
 - [TypeScript Monorepo 的多种实践方式](https://github.com/colinhacks/live-typescript-monorepo)
 - [Esbuild 中的 project reference 实践方式](https://github.com/evanw/esbuild/issues/1250#issuecomment-1463826174)
 
