@@ -3,11 +3,11 @@
   "compilerOptions": {
     "composite": true,
     "target": "esnext",
+    "lib": ["ES2019", "dom"],
+    "customConditions": ["browser"],
     "module": "esnext",
     "moduleResolution": "bundler",
-    "lib": ["dom"],
-    "types": [],
-    "customConditions": ["browser"]
+    "types": []
   },
   "include": [
     "../website/src/**/*",

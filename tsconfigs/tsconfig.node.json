@@ -3,10 +3,10 @@
   "compilerOptions": {
     "composite": true,
     "target": "ESNext",
-    "module": "CommonJS",
-    "moduleResolution": "bundler",
-    "types": ["node"],
-    "customConditions": ["node"]
+    "customConditions": ["node"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node"]
   },
   "include": [
     "../scripts/**/*.ts",
