@@ -10,6 +10,7 @@
     "types": []
   },
   "include": [
+    "../apis/src/**/*.share.d.ts",
     "../website/src/**/*",
     "../website/tests/**/*",
     "../packages/*/src/**/*.browser.ts"

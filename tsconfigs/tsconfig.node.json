@@ -13,6 +13,7 @@
     "../vitest.config.ts",
     "../vitest.workspace.ts",
     "../website/vite.config.ts",
+    "../website/src/**/*.share.d.ts",
     "../apis/src/**/*",
     "../apis/tests/**/*",
     "../packages/*/src/**/*.node.ts"
