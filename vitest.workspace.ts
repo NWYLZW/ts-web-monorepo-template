@@ -37,7 +37,7 @@ for (const { path: p } of references) {
   }
 }
 
-export default defineWorkspace(referenceProjects.map(([path, tsconfig]) => ({
+export default defineWorkspace(referenceProjects.map(([, tsconfig]) => ({
   test: {
     include: tsconfig.include
   },
