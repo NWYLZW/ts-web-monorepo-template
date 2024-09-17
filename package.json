@@ -1,5 +1,6 @@
 {
   "name": "ts-web-monorepo-template",
+  "type": "module",
   "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@9.10.0",
