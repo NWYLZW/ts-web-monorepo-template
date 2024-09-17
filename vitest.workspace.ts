@@ -18,18 +18,23 @@ const referenceProjects: [path: string, TSConfig][] = []
 for (const { path: p } of references) {
   const projectTSConfigStr = fs.readFileSync(p, 'utf-8')
   const relativePath = path.relative(process.cwd(), p)
+  const dirPath = path.dirname(relativePath)
 
   // TODO support jsonc
   const projectTSConfig = JSON.parse(projectTSConfigStr) as TSConfig
   projectTSConfig.include = projectTSConfig.include
-    ?.map(i => path.resolve(path.dirname(relativePath), i))
+    ?.map(i => path.resolve(dirPath, i))
     ?.map(i => i.replace(new RegExp(`^${process.cwd()}${path.sep}`), ''))
     ?.filter(i => i.includes('.spec.'))
+    ?? []
   projectTSConfig.exclude = projectTSConfig.exclude
-    ?.map(i => path.resolve(path.dirname(relativePath), i))
+    ?.map(i => path.resolve(dirPath, i))
     ?.map(i => i.replace(new RegExp(`^${process.cwd()}${path.sep}`), ''))
     ?.filter(i => i.includes('.spec.'))
-  referenceProjects.push([p, projectTSConfig])
+    ?? []
+  if (projectTSConfig.include.length !== 0 && projectTSConfig.exclude.length !== 0) {
+    referenceProjects.push([p, projectTSConfig])
+  }
 }
 
 export default defineWorkspace(referenceProjects.map(([path, tsconfig]) => ({
