@@ -6,6 +6,7 @@
     "customConditions": ["node"],
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
     "types": ["node"]
   },
   "include": [
