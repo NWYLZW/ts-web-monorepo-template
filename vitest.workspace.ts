@@ -36,12 +36,13 @@ for (const { path: p } of references) {
   }
 }
 
-export default defineWorkspace(referenceProjects.map(([, tsconfig]) => ({
-  test: {
-    include: tsconfig.include
-  },
+export default defineWorkspace(referenceProjects.map(([, {
+  include,
+  compilerOptions
+}]) => ({
+  test: { include },
   ssr: {
-    target: tsconfig.compilerOptions?.customConditions?.includes('browser')
+    target: compilerOptions?.customConditions?.includes('browser')
       ? 'webworker'
       : 'node'
   },
@@ -55,7 +56,7 @@ export default defineWorkspace(referenceProjects.map(([, tsconfig]) => ({
         if (!c.resolve.conditions) {
           c.resolve.conditions = []
         }
-        c.resolve.conditions = tsconfig.compilerOptions?.customConditions ?? ['default']
+        c.resolve.conditions = compilerOptions?.customConditions ?? ['default']
       },
     }
   ]
