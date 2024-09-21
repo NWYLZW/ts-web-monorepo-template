@@ -8,6 +8,8 @@ import tsconfig from './tsconfig.json'
 
 const relativeCWD = (p: string) => path.relative(process.cwd(), p)
 
+const isTestFileGlobExpr = (expr: string) => expr.includes('.spec.')
+
 const { references } = tsconfig
 interface TSConfig {
   include?: string[]
@@ -23,7 +25,7 @@ for (const { path: p } of references) {
   const dirPath = path.dirname(relativePath)
   const filterSpecFiles = (globs: string[] = []) => globs
     .map(relativeCWD)
-    .filter(i => i.includes('.spec.'))
+    .filter(isTestFileGlobExpr)
 
   // TODO support jsonc
   const projectTSConfig = JSON.parse(projectTSConfigStr) as TSConfig
