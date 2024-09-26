@@ -4,6 +4,7 @@
     "composite": true
   },
   "include": [
+    "../packages/*/tests/**/*.ts",
     "../packages/*/tests/**/*.spec.ts"
   ]
 }
