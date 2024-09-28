@@ -1,5 +1,6 @@
 {
   "name": "website",
+  "type": "module",
   "scripts": {
     "start": "vite"
   },
