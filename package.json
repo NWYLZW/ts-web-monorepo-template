@@ -11,6 +11,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
+    "rename-project-and-reset-autor": "./scripts/rename-project-and-reset-autor.sh",
     "echo-hi": "node -r esbuild-register ./scripts/echo-hi.ts"
   },
   "devDependencies": {
