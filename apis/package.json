@@ -1,5 +1,9 @@
 {
   "name": "apis",
+  "version": "0.1.0",
+  "author": {
+    "name": "YiJie"
+  },
   "scripts": {
     "start": "node -r esbuild-register src/index.ts"
   },

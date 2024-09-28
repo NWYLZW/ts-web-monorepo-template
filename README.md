@@ -8,3 +8,4 @@
 
 - [指导](.about/GUIDE.md)
 - [如何参与贡献](.about/CONTRIBUTING.md)
+- [行为守则](./CODE_OF_CONDUCT.md)

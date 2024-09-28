@@ -8,3 +8,4 @@ A template project for rapid development of web applications under a monorepo ar
 
 - [Guide](./GUIDE.md)
 - [How to contribute](./CONTRIBUTING.md)
+- [Code of conduct](../../CODE_OF_CONDUCT.md)
