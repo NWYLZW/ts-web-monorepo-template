@@ -1,0 +1,10 @@
+# TypeScript Web Monorepo Template
+
+| en-US | [zh-Hans](../../README.md) |
+
+A template project for rapid development of web applications under a monorepo architecture.
+
+## Learn Project
+
+- [Guide](./GUIDE.md)
+- [How to contribute](./CONTRIBUTING.md)
