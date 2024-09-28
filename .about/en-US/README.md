@@ -6,6 +6,6 @@ A template project for rapid development of web applications under a monorepo ar
 
 ## Learn Project
 
-- [Guide](./GUIDE.md)
+- [Design](./DESIGN.md)
 - [How to contribute](./CONTRIBUTING.md)
 - [Code of conduct](../../CODE_OF_CONDUCT.md)

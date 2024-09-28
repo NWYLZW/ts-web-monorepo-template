@@ -6,6 +6,6 @@
 
 ## 了解本项目
 
-- [指导](.about/GUIDE.md)
+- [设计](.about/DESIGN.md)
 - [如何参与贡献](.about/CONTRIBUTING.md)
 - [行为守则](./CODE_OF_CONDUCT.md)
