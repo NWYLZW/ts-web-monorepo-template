@@ -11,6 +11,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
+    "postinstall": "dprint editor-info",
     "rename-project-and-reset-autor": "./scripts/rename-project-and-reset-autor.sh",
     "echo-hi": "node -r esbuild-register ./scripts/echo-hi.ts"
   },
