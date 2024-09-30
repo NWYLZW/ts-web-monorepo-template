@@ -31,7 +31,7 @@ for (const { path: p } of references) {
   const projectTSConfig = JSON.parse(projectTSConfigStr) as TSConfig
   projectTSConfig.include = filterSpecFiles(projectTSConfig.include?.map(i => path.resolve(dirPath, i)))
   projectTSConfig.exclude = filterSpecFiles(projectTSConfig.exclude?.map(i => path.resolve(dirPath, i)))
-  if (projectTSConfig.include.length !== 0 && projectTSConfig.exclude.length !== 0) {
+  if (projectTSConfig.include.length !== 0 || projectTSConfig.exclude.length !== 0) {
     referenceProjects.push([p, projectTSConfig])
   }
 }
