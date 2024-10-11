@@ -24,8 +24,8 @@ importers:
         specifier: ^9.9.1
         version: 9.9.1
       jiek:
-        specifier: 0.4.7-alpha.12
-        version: 0.4.7-alpha.12(@pnpm/logger@5.2.0)(esbuild@0.21.5)
+        specifier: ^1.0.2
+        version: 1.0.2(@pnpm/logger@5.2.0)(esbuild@0.21.5)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -1937,8 +1937,8 @@ packages:
     resolution: {integrity: sha512-LpB/54B+/2J5hqQ7imZHfdU31OlgQqx7ZicVlkm9kzg9/w8GKLEcFfJl/t7DCEDueOyBAD6zCCwTO6Fzs0NoEQ==}
     engines: {node: '>=16'}
 
-  jiek@0.4.7-alpha.12:
-    resolution: {integrity: sha512-cHB2BGi27ywISSx4oLLhwpl9YjtB9GS1Qy314O89O/wgZ2IIuWnv20xTzhRB//L71QGU57G6MICKw5dGNGZ2mg==}
+  jiek@1.0.2:
+    resolution: {integrity: sha512-SpJ4i77viQ7gnLdbhhio6m3Y9w4bfHc1sQYAj+/XskrRXEHyU9njHOQ70SU9Dw1gj109qQ02Sv4pdf0LA+Otxg==}
     hasBin: true
 
   js-tokens@4.0.0:
@@ -5395,7 +5395,7 @@ snapshots:
   isexe@3.1.1:
     optional: true
 
-  jiek@0.4.7-alpha.12(@pnpm/logger@5.2.0)(esbuild@0.21.5):
+  jiek@1.0.2(@pnpm/logger@5.2.0)(esbuild@0.21.5):
     dependencies:
       '@jiek/pkger': 0.2.0
       '@jiek/rollup-plugin-dts': 6.1.1(rollup@4.20.0)(typescript@5.5.4)
