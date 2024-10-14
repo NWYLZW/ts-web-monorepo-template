@@ -2,79 +2,42 @@ import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 
+import ts from 'typescript'
 import { defineWorkspace } from 'vitest/config'
-
-import tsconfig from './tsconfig.json'
-
-const relativeCWD = (p: string) => `./${path.relative(process.cwd(), p)}`
 
 const isTestFileGlobExpr = (expr: string) => expr.includes('.spec.')
 
-const getCompilerOptions = (tsconfigPath: string): TSConfig => {
-  const dirPath = path.dirname(tsconfigPath)
-  const tsconfigStr = fs.readFileSync(tsconfigPath, 'utf-8')
-  const tsconfig = JSON.parse(tsconfigStr) as TSConfig
-  if (!tsconfig.extends || tsconfig.extends.length === 0) {
-    return tsconfig
-  }
-  const extendPaths = Array.isArray(tsconfig.extends)
-    ? tsconfig.extends
-    : [tsconfig.extends]
-  const extendCompilerOptions = extendPaths
-    .map(p => {
-      if (!path.isAbsolute(p)) {
-        p = path.resolve(dirPath, p)
-      }
-      return getCompilerOptions(p).compilerOptions
-    })
-    .reduce((acc, curr = {}) => ({ ...acc, ...curr }), {} as TSConfig['compilerOptions'])
-  return {
-    ...tsconfig,
-    compilerOptions: {
-      ...extendCompilerOptions,
-      ...tsconfig.compilerOptions
-    }
-  }
-}
+const tsconfigPath = ts.findConfigFile(process.cwd(), fs.existsSync)
+if (!tsconfigPath) throw new Error('tsconfig.json not found')
 
-const { references } = tsconfig
-interface TSConfig {
-  extends?: string | string[]
-  include?: string[]
-  exclude?: string[]
-  compilerOptions?: {
-    customConditions?: string[]
+const { config: tsconfig, error } = ts.readConfigFile(tsconfigPath, p => fs.readFileSync(p, 'utf-8'))
+if (error) throw error
+
+const { projectReferences } = ts.parseJsonConfigFileContent(tsconfig, ts.sys, path.dirname(tsconfigPath), {}, tsconfigPath)
+
+const projects: {
+  files: string[]
+  options: ts.CompilerOptions
+}[] = []
+projectReferences?.forEach(({ path: p }) => {
+  const { config: tsconfig, error } = ts.readConfigFile(p, p => fs.readFileSync(p, 'utf-8'))
+  if (error) throw error
+  const { options, fileNames, errors } = ts.parseJsonConfigFileContent(tsconfig, ts.sys, path.dirname(p), {}, p)
+  if (errors.length > 0) {
+    errors.forEach(e => console.warn(`[vitest] ${e.messageText}`))
   }
-}
-const referenceProjects: [path: string, TSConfig][] = []
-for (const { path: p } of references) {
-  const projectTSConfig = getCompilerOptions(p)
-
-  const relativePath = path.relative(process.cwd(), p)
-  const dirPath = path.dirname(relativePath)
-  const filterSpecFiles = (globs: string[] = []) => globs
-    .map(relativeCWD)
-    .filter(isTestFileGlobExpr)
-
-  projectTSConfig.include = filterSpecFiles(projectTSConfig.include?.map(i => path.resolve(dirPath, i)))
-  projectTSConfig.exclude = filterSpecFiles(projectTSConfig.exclude?.map(i => path.resolve(dirPath, i))).length > 0
-    ? projectTSConfig.exclude
-      ?.map(i => path.resolve(dirPath, i))
-      ?.map(relativeCWD)
-    : []
-  if (projectTSConfig.include?.length !== 0 || projectTSConfig.exclude?.length !== 0) {
-    referenceProjects.push([p, projectTSConfig])
+  if (fileNames.filter(isTestFileGlobExpr).length > 0) {
+    projects.push({ files: fileNames, options })
   }
-}
+})
 
-export default defineWorkspace(referenceProjects.map(([, {
-  include,
-  exclude,
-  compilerOptions
-}]) => ({
-  test: { include, exclude },
+export default defineWorkspace(projects.map(({
+  files,
+  options
+}) => ({
+  test: { include: files },
   ssr: {
-    target: compilerOptions?.customConditions?.includes('browser')
+    target: options?.customConditions?.includes('browser')
       ? 'webworker'
       : 'node'
   },
@@ -88,7 +51,7 @@ export default defineWorkspace(referenceProjects.map(([, {
         if (!c.resolve.conditions) {
           c.resolve.conditions = []
         }
-        c.resolve.conditions = compilerOptions?.customConditions ?? ['default']
+        c.resolve.conditions = options?.customConditions ?? ['default']
       },
     }
   ]
