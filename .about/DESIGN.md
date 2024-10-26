@@ -72,34 +72,35 @@
 
 ## Q&A
 
-Q: 为什么不用 tsconfig paths？
+- Q: 为什么不用 tsconfig paths？
+- A: 有多点：
+  - 不够标准为主要原因，由此导致很多 bundler 工具并不默认支持，因此需要用户根据自己的 bundler 去安装相应的插件。
+  - 在 monorepo 的环境下，如果使用 paths 且存在多份 tsconfig，那么你还需要告诉你的打包器应该用哪个 tsconfig，这样会导致你的打包器的配置变得复杂。
+  - 没办法利用 conditional exports、imports。导致在部分较为常见场景处理起来不好用，比如无法使用一个路径，根据具体的文件选择不同内容导出。
+  - 在 monorepo 环境下，如果 tsconfig 的配置复杂，每一个包可能都需要一个 tsconfig，或者有部分包需要一个特殊的 tsconfig，但是 paths 或者 rootdir 或者其他影响路径的配置，都会导致你的 paths 要在每一个这样的场景下复制一遍。
 
-A: 有多点：
-- 不够标准为主要原因，由此导致很多 bundler 工具并不默认支持，因此需要用户根据自己的 bundler 去安装相应的插件。
-- 在 monorepo 的环境下，如果使用 paths 且存在多份 tsconfig，那么你还需要告诉你的打包器应该用哪个 tsconfig，这样会导致你的打包器的配置变得复杂。
-- 没办法利用 conditional exports、imports。导致在部分较为常见场景处理起来不好用，比如无法使用一个路径，根据具体的文件选择不同内容导出。
-- 在 monorepo 环境下，如果 tsconfig 的配置复杂，每一个包可能都需要一个 tsconfig，或者有部分包需要一个特殊的 tsconfig，但是 paths 或者 rootdir 或者其他影响路径的配置，都会导致你的 paths 要在每一个这样的场景下复制一遍。
+- Q: 为什么将单元测试单独分开？
+- A: 类型污染，单元测试往往会依赖 @types/node 这间接导致你包括了单元测试文件的 tsconfig project 都会被 node 的类型污染，以及其他的类型污染。
 
-Q: 为什么将单元测试单独分开？
+  参考资料：[Ambient Module Declaration](https://www.typescriptlang.org/docs/handbook/modules/reference.html#:~:text=Ambient%20modules.%20TypeScript%20supports%20a%20syntax%20in%20script)
 
-A: 类型污染，单元测试往往会依赖 @types/node 这间接导致你包括了单元测试文件的 tsconfig project 都会被 node 的类型污染，以及其他的类型污染。
+- Q: 为什么不弄多个 tsconfig 在每个包下面？
 
-参考资料：[Ambient Module Declaration](https://www.typescriptlang.org/docs/handbook/modules/reference.html#:~:text=Ambient%20modules.%20TypeScript%20supports%20a%20syntax%20in%20script)
+- A: 会导致维护起来十分的困难，如果你有在大型 Monorepo 下面工作的经验，你很容易遇到以下一些情况：
+  - 每个包下面反复去[配置相同](https://github.com/web-infra-dev/rspack/blob/0db8b9441a8bf9447ce11cc69292df773482cec8/packages/rspack-cli/tsconfig.json#L3-L9)的 tsconfig 编译参数
+  - 哪怕你在 package.json 下面已经声明了当前包的工作空间内的依赖，你同样还是需要在包下面 tsconfig 中[引用对应 project 的目录](https://github.com/volarjs/volar.js/blob/bfa90aec50b975189f574b47affb619b9e1d679d/packages/language-server/tsconfig.json#L5-L8)，才能获取到依赖正确的类型
 
-Q: 为什么不弄多个 tsconfig 在每个包下面？
+    当依赖关系变多变复杂的时候，你的每一个包都需要同时维护俩套依赖定义方式，这显然是不够优雅的。
 
-A: 麻烦，你要写多个，然后不断的 extends，维护成本也很高。不是一种好的实践。
+- Q: 为什么要有那么多的 tsconfig？
 
-Q: 为什么要有那么多的 tsconfig？
+- A: 对于一个现代化并完善的前端项目来说，我们必然有几个核心需求
+  - 写 Bundler(Webpack, Rollup, Vite) 的配置文件
+  - 写运行在浏览器的前端项目文件
+  - 写不限制使用范围的文件
+  - 写单元测试文件
 
-A: 对于一个现代化并完善的前端项目来说，我们必然有几个核心需求
-
-- 写 Bundler(Webpack, Rollup, Vite) 的配置文件
-- 写运行在浏览器的前端项目文件
-- 写不限制使用范围的文件
-- 写单元测试文件
-
-这些并不单单是一个简单的依赖管理就能把所有的问题解决，我们同时还需要认知每一种文件都有自己特定的环境类型，以及文件的模块引入策略条件，乃至于编译选项的配置。所以我们至少需要 3 * 2 个不同的 tsconfig 来管理这些文件。
+  这些并不单单是一个简单的依赖管理就能把所有的问题解决，我们同时还需要认知每一种文件都有自己特定的环境类型，以及文件的模块引入策略条件，乃至于编译选项的配置。所以我们至少需要 3 * 2 个不同的 tsconfig 来管理这些文件。
 
 ## 相关
 
