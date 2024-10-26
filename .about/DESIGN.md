@@ -1,16 +1,26 @@
 # 设计思路
 
-出于社区环境对 `exports`、`conditions` 等新特性的支持，我们已经可以使用一套全新的方式去架构我们的 monorepo 项目。
+在新时代我们的开发环境往往是复杂且多样的，在很多的知名大型项目中他们都采取了 Monorepo 的方式进行管理，但是纵观如此多的项目，他们在一些开发体验上并没有做到极致。
 
-基于以下几点：
+那么在这个全新的时代我们有什么全新手段可以解决我们在 Monorepo 开发过程中遇到的各式各样的问题呢？
 
-- 通过 `tsconfig.json` 的 `references` 来管理不同类型文件的类型相关规则
-- 针对于多样化包出口的需求，可采用 `exports` 配合支持的 condition 来实现
-- 同时对于不同的测试需求，这里也通过 tsconfig 中的相关约束进行配置生成
+- [`exports`](https://nodejs.org/api/packages.html#exports)、[`imports`](https://nodejs.org/api/packages.html#imports)、[`conditions`](https://nodejs.org/api/packages.html#conditional-exports) 等全新导出特性的大规模支持
+- tsconfig 的 [`references`](https://www.typescriptlang.org/docs/handbook/project-references.html) 提供了对不同类型文件的编译参数控制
+- tsconfig 的 [`compilerOptions.moduleResolution`](https://www.typescriptlang.org/tsconfig/moduleResolution.html) 支持了 [bundler](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#--moduleresolution-bundler)
+- vitest 对于[工作空间](https://vitest.dev/guide/workspace)的支持
+- yarn 的 [Cross-references](https://yarnpkg.com/features/workspaces#cross-references)、pnpm 的 [Workspace protocol](https://pnpm.io/workspaces#workspace-protocol-workspace) 解决工作空间中的依赖管理问题
+- 基于 rollup 在工作空间的新型构建工具 [jiek](https://github.com/NWYLZW/jiek/blob/master/packages/jiek/README.md)
 
-如此便能实现我们的全新的设计思路。
+## 具体设计
 
-## 项目规范
+我们在架构一个 Monorepo 的时候往往是存在着非常多的诉求，比如说：融合了中间层（后端） Node.js 的项目、前端文档站、需要部署的前端、小程序、工具包等等。
+
+出于我们复杂且多变的环境，在这里可以从多个角度对我们的 Monorepo 进行规划：
+
+- 更准确更可靠更具备扩展性的类型
+- 基于工作空间的依赖规则而自然而然的构建发布工具和方式
+- 单元测试
+- lint 规则
 
 本项目指在对**类型系统**进行规范借鉴，故在技术栈的选型上主要为示范性作用，很多工具链的配置改造成本较低，如果你需要进行自己的技术选型，建议开发过程中按照相应的规则进行调整。
 
