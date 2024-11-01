@@ -5,12 +5,12 @@
 那么在这个全新的时代我们有什么全新手段可以解决我们在 Monorepo 开发过程中遇到的各式各样的问题呢？
 
 - [`exports`](https://nodejs.org/api/packages.html#exports)、[`imports`](https://nodejs.org/api/packages.html#imports)、[`conditions`](https://nodejs.org/api/packages.html#conditional-exports) 等全新导出特性的大规模支持
-- tsconfig 的 [`references`](https://www.typescriptlang.org/docs/handbook/project-references.html) 提供了对不同类型文件的编译参数控制
-- tsconfig 的 [`compilerOptions.moduleResolution`](https://www.typescriptlang.org/tsconfig/moduleResolution.html) 支持了 [bundler](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#--moduleresolution-bundler)
-- tsconfig 的 [`customCondtions`](https://www.typescriptlang.org/tsconfig/#customConditions) 支持了条件导出，可以让用户根据自己的环境使用不同的导出策略
-- vitest 对于[工作空间](https://vitest.dev/guide/workspace)的支持
-- yarn 的 [Cross-references](https://yarnpkg.com/features/workspaces#cross-references)、pnpm 的 [Workspace protocol](https://pnpm.io/workspaces#workspace-protocol-workspace) 解决工作空间中的依赖管理问题
-- 基于 rollup 在工作空间的新型构建工具 [jiek](https://github.com/NWYLZW/jiek/blob/master/packages/jiek/README.md)
+- `tsconfig` 的 [`references`](https://www.typescriptlang.org/docs/handbook/project-references.html) 提供了对不同类型文件的编译参数控制
+- `tsconfig` 的 [`compilerOptions.moduleResolution`](https://www.typescriptlang.org/tsconfig/moduleResolution.html) 支持了 [bundler](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#--moduleresolution-bundler)
+- `tsconfig` 的 [`customCondtions`](https://www.typescriptlang.org/tsconfig/#customConditions) 支持了条件导出，可以让用户根据自己的环境使用不同的导出策略
+- `vitest` 对于[工作空间](https://vitest.dev/guide/workspace)的支持
+- `yarn` 的 [Cross-references](https://yarnpkg.com/features/workspaces#cross-references)、`pnpm` 的 [Workspace protocol](https://pnpm.io/workspaces#workspace-protocol-workspace) 解决工作空间中的依赖管理问题
+- 基于 `rollup` 在工作空间的新型构建工具 [jiek](https://github.com/NWYLZW/jiek/blob/master/packages/jiek/README.md)
 
 ## 具体设计
 
