@@ -115,3 +115,12 @@
 
 - [Node.js 中的条件导出](https://nodejs.org/api/packages.html#conditional-exports)
 - [TypeScript 中的模块解析策略](https://www.typescriptlang.org/docs/handbook/modules/reference.html#the-moduleresolution-compiler-option)
+
+## 未来
+
+- 自动化体系的完善
+  - 发包
+  - 部署
+- 优化任务流
+
+  根据目标的依赖关系进行构建任务规划，从而避免整体构建的性能困境与手动规划任务困难的难点
