@@ -1,10 +1,25 @@
 # 设计思路
 
-在新时代我们的开发环境往往是复杂且多样的，在很多的知名大型项目中他们都采取了 Monorepo 的方式进行管理，但是纵观如此多的项目，他们在一些开发体验上并没有做到极致。
+## 引
 
-那么在这个全新的时代我们有什么全新手段可以解决我们在 Monorepo 开发过程中遇到的各式各样的问题呢？
+[Monorepo 中基建最关键的部分是如何清晰简单的去定义相互依赖关系。](https://monorepo.tools/#what-is-a-monorepo)
 
-- [`exports`](https://nodejs.org/api/packages.html#exports)、[`imports`](https://nodejs.org/api/packages.html#imports)、[`conditions`](https://nodejs.org/api/packages.html#conditional-exports) 等全新导出特性的大规模支持
+## 面对的问题
+
+开发环境往往是复杂且多样的，比如说：需要部署的前端、小程序、工具包、融合了中间层（后端） Node.js 的项目、前端文档站等等。
+
+在很多的知名大型项目中他们都采取了 Monorepo 的方式进行管理，但是纵观如此多的项目，他们在一些开发体验上并没有做到极致。我们会面对各种各样的问题：
+
+- tsconfig 配置维护困难
+- 方案不够标准导致依赖外部插件
+- 源码跳转失效
+- 无法细化导出规则：屏蔽、子路径、禁用等
+
+## 可用的手段
+
+那么在这个全新的时代我们有什么新手段可以解决我们在 Monorepo 开发过程中遇到的各式各样的问题呢？
+
+- [`exports`](https://nodejs.org/api/packages.html#exports)、[`imports`](https://nodejs.org/api/packages.html#imports)、[`conditions`](https://nodejs.org/api/packages.html#conditional-exports) 等导出特性的支持
 - `tsconfig` 的 [`references`](https://www.typescriptlang.org/docs/handbook/project-references.html) 提供了对不同类型文件的编译参数控制
 - `tsconfig` 的 [`compilerOptions.moduleResolution`](https://www.typescriptlang.org/tsconfig/moduleResolution.html) 支持了 [bundler](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#--moduleresolution-bundler)
 - `tsconfig` 的 [`customCondtions`](https://www.typescriptlang.org/tsconfig/#customConditions) 支持了条件导出，可以让用户根据自己的环境使用不同的导出策略
@@ -14,9 +29,7 @@
 
 ## 具体设计
 
-我们在架构一个 Monorepo 的时候往往是存在着非常多的诉求，比如说：融合了中间层（后端） Node.js 的项目、前端文档站、需要部署的前端、小程序、工具包等等。
-
-出于我们复杂且多变的环境，在这里可以从多个角度对我们的 Monorepo 进行规划：
+首先从多个角度对我们的 Monorepo 进行规划：
 
 - 更准确更可靠更具备扩展性的类型
 - 基于工作空间的依赖以及导出规则而自然而然的构建发布工具和方式
@@ -115,6 +128,9 @@
 
 参考资料：
 
+- [Monorepo tools](https://monorepo.tools/)
+- [Monorepo vs. polyrepo](https://github.com/joelparkerhenderson/monorepo-vs-polyrepo)
+- [Monorepo ≠ is different fromMonolith](https://blog.nrwl.io/misconceptions-about-monorepos-monorepo-monolith-df1250d4b03c)
 - [Node.js 中的条件导出](https://nodejs.org/api/packages.html#conditional-exports)
 - [TypeScript 中的模块解析策略](https://www.typescriptlang.org/docs/handbook/modules/reference.html#the-moduleresolution-compiler-option)
 
