@@ -12,8 +12,5 @@
       "node": "./src/readFile.node.ts",
       "browser": "./src/readFile.browser.ts"
     }
-  },
-  "devDependencies": {
-    "@mono/utils": "workspace:*"
   }
 }
