@@ -136,6 +136,12 @@
 
 ### 工具链
 
+- Tests: [Vitest](https://vitest.dev/)
+
+  配置文件位置 `vitest.workspace.ts` 和 `vitest.config.ts`。
+
+  通过使用 Vitest 的 workspace ，我们可以对测试进行类型的划分，而我们在上面的定义分类的 tsconfig 又很好的契合了这个用法，我们可以直接通过 tsconfig 而直接生成我们的编译配置。
+
 - Linter: [ESLint](https://eslint.org/)
 
   这里使用 @antfu/eslint-config 作为默认配置，你可以使用 `pnpm dlx @antfu/eslint-config@latest` 调整为你需要的具体项目配置。
