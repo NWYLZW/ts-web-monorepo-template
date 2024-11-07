@@ -35,6 +35,7 @@ export default defineWorkspace(projects.map(({
   files,
   options
 }) => ({
+  extends: './vitest.config.ts',
   test: { include: files },
   ssr: {
     target: options?.customConditions?.includes('browser')
