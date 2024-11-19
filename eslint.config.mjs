@@ -2,7 +2,10 @@ import config from '@antfu/eslint-config'
 
 export default config(
   {
-    stylistic: false
+    stylistic: false,
+    typescript: {
+      tsconfigPath: './tsconfig.json'
+    }
   },
   {
     files: [
