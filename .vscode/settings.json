@@ -1,4 +1,6 @@
 {
+  "typescript.tsdk": "node_modules/typescript/lib",
+
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": false,
@@ -8,6 +10,12 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
+
+  "eslint.options": {
+    "flags": ["unstable_ts_config"]
+  },
+
+  "eslint.runtime": "node",
 
   // Silent the stylistic rules in you IDE, but still auto fix them
   "eslint.rules.customizations": [
@@ -33,6 +41,7 @@
     "html",
     "markdown",
     "json",
+    "json5",
     "jsonc",
     "yaml",
     "toml",
