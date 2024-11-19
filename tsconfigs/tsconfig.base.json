@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
     "rootDir": "..",
     "module": "ESNext",
-    "target": "ESNext",
     "strict": true,
     "strictNullChecks": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
   }
 }
