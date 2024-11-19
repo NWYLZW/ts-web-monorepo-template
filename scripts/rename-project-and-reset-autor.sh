@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # use directory name as project name and let user confirm it or input a new one
 echo "Enter the new project name: (default: $(basename "$(pwd)"), press Enter to use default)"
 read -r new_project_name
