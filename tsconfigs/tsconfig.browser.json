@@ -9,6 +9,9 @@
     "moduleResolution": "bundler",
     "types": []
   },
+  "references": [
+    { "path": "./tsconfig.default.json" }
+  ],
   "include": [
     "../apis/src/**/*.share.d.ts",
     "../website/src/**/*",
