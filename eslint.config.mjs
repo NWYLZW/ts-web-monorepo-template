@@ -7,9 +7,14 @@ export default config(
       tsconfigPath: './tsconfig.json'
     }
   },
+  // test, script and config files
   {
     files: [
-      './pacakges/*/tests/**/*.{js,ts,tsx}'
+      './pacakges/*/tests/**/*.{js,ts,tsx}',
+      './vitest.config.ts',
+      './vitest.workspace.ts',
+      './website/vite.config.ts',
+      './scripts/**/*.{js,ts}'
     ],
     rules: {
       'no-console': 'off'
