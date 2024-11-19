@@ -4,9 +4,14 @@
     "semiColons": "asi",
     "trailingCommas": "never",
     "conditionalType.operatorPosition": "nextLine",
-    "exportDeclaration": {
-      "sortNamedExports": "maintain"
-    }
+    "jsx.multiLineParens": "never",
+    "typeParameters.trailingCommas": "onlyMultiLine",
+    "module.sortImportDeclarations": "caseSensitive",
+    "module.sortExportDeclarations": "caseSensitive",
+    "exportDeclaration.sortNamedExports": "caseSensitive",
+    "importDeclaration.sortNamedImports": "caseSensitive",
+    "importDeclaration.sortTypeOnlyImports": "first",
+    "exportDeclaration.sortTypeOnlyExports": "first"
   },
   "malva": {
     "ignoreCommentDirective": "dprint-ignore",
@@ -24,10 +29,11 @@
     "**/*-lock.json"
   ],
   "plugins": [
-    "https://plugins.dprint.dev/typescript-0.90.3.wasm",
+    "https://plugins.dprint.dev/typescript-0.93.2.wasm",
     "https://plugins.dprint.dev/json-0.19.2.wasm",
     "https://plugins.dprint.dev/markdown-0.16.4.wasm",
     "https://plugins.dprint.dev/toml-0.6.1.wasm",
-    "https://plugins.dprint.dev/g-plane/malva-v0.4.0.wasm"
+    "https://plugins.dprint.dev/g-plane/malva-v0.4.0.wasm",
+    "https://plugins.dprint.dev/g-plane/markup_fmt-v0.15.1.wasm"
   ]
 }
