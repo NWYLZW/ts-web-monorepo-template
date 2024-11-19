@@ -1,10 +1,10 @@
 {
   "name": "website",
+  "type": "module",
   "version": "0.1.0",
   "author": {
     "name": "YiJie"
   },
-  "type": "module",
   "scripts": {
     "start": "vite"
   },
