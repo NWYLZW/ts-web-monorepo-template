@@ -3,6 +3,9 @@
   "compilerOptions": {
     "composite": true
   },
+  "references": [
+    { "path": "./tsconfig.default.json" }
+  ],
   "include": [
     "../packages/*/tests/**/*.ts",
     "../packages/*/tests/**/*.spec.ts"

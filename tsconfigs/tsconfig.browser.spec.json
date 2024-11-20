@@ -3,6 +3,9 @@
   "compilerOptions": {
     "composite": true
   },
+  "references": [
+    { "path": "./tsconfig.browser.json" }
+  ],
   "include": [
     "../packages/*/tests/**/*.browser.ts",
     "../packages/*/tests/**/*.browser.spec.ts"
