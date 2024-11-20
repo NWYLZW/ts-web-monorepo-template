@@ -21,7 +21,7 @@
 ![use-this-template.png](.about/use-this-template.png)
 2. 根据提示填写你的项目信息
 3. 克隆你的项目到本地
-4. 运行 `./scripts/rename-project-and-reset-autor.sh` 脚本，根据提示填写你的项目信息
+4. 运行 `./scripts/rename-project-and-reset-author.sh` 脚本，根据提示填写你的项目信息
 5. 运行 `pnpm install` 安装依赖
 6. 运行 `pnpm --filter website start` 启动开发服务器
 

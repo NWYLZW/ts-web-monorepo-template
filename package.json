@@ -12,7 +12,7 @@
   },
   "scripts": {
     "postinstall": "dprint editor-info",
-    "rename-project-and-reset-autor": "./scripts/rename-project-and-reset-autor.sh",
+    "rename-project-and-reset-author": "./scripts/rename-project-and-reset-author.sh",
     "echo-hi": "node -r esbuild-register ./scripts/echo-hi.ts"
   },
   "devDependencies": {
