@@ -7,7 +7,11 @@
   "exports": {
     "./package.json": "./package.json",
     ".": "./src/index.ts",
-    "./bar": "./src/bar.ts",
+    "./bar": {
+      "import": "./src/bar.browser.ts",
+      "require": "./src/bar.node.ts",
+      "default": "./src/bar.ts"
+    },
     "./readFile": {
       "node": "./src/readFile.node.ts",
       "browser": "./src/readFile.browser.ts"
