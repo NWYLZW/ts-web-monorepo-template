@@ -4,6 +4,9 @@
   "author": {
     "name": "YiJie"
   },
+  "scripts": {
+    "prepublish": "jk build --noMin"
+  },
   "exports": {
     "./package.json": "./package.json",
     ".": "./src/index.ts",
