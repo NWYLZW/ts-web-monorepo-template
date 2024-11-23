@@ -1,7 +1,5 @@
 import config from '@antfu/eslint-config'
 
-console.log('hello eslint')
-
 export default config(
   {
     stylistic: false,
