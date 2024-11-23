@@ -16,7 +16,7 @@
     "echo-hi": "node -r esbuild-register ./scripts/echo-hi.ts"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.3.2",
+    "@antfu/eslint-config": "^3.9.2",
     "@types/node": "^18.19.45",
     "dprint": "^0.47.2",
     "esbuild-register": "^3.6.0",
