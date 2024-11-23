@@ -34,8 +34,7 @@ export default config(
       'scripts/**/*.{js,ts}'
     ],
     rules: {
-      'no-console': 'off',
-      'ts/strict-boolean-expressions': 'off'
+      'no-console': 'off'
     }
   }
 )
