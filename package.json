@@ -20,8 +20,8 @@
     "@types/node": "^18.19.45",
     "dprint": "^0.47.2",
     "esbuild-register": "^3.6.0",
-    "eslint": "^9.9.1",
-    "jiek": "^1.1.12",
+    "eslint": "^9.10.0",
+    "jiek": "^1.1.13",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5"
   }
