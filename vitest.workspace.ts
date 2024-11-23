@@ -32,7 +32,9 @@ projectReferences?.forEach(({ path: p }) => {
   if (error) throw error
   const { options, fileNames, errors } = ts.parseJsonConfigFileContent(tsconfig, ts.sys, path.dirname(p), {}, p)
   if (errors.length > 0) {
-    errors.forEach(e => console.warn(`[vitest] ${e.messageText}`))
+    errors.forEach(e =>
+      console.warn(`[vitest] ${typeof e.messageText === 'string' ? e.messageText : e.messageText.messageText}`)
+    )
   }
   if (fileNames.filter(isTestFileGlobExpr).length > 0) {
     projects.push({ files: fileNames, options })
