@@ -17,7 +17,9 @@
       "browser": "./src/readFile.browser.ts"
     }
   },
+  "files": ["LICENSE", "README.md", "dist", "src"],
   "scripts": {
-    "prepublish": "jk build --noMin"
+    "prepublish": "jb -nm && jk",
+    "postpublish": "jk"
   }
 }
