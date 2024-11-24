@@ -3,6 +3,7 @@
     "target": "ESNext",
     "rootDir": "..",
     "module": "ESNext",
+    "allowImportingTsExtensions": true,
     "strict": true,
     "strictNullChecks": true,
     "esModuleInterop": true,
