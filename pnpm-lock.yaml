@@ -24,8 +24,8 @@ importers:
         specifier: ^9.10.0
         version: 9.15.0
       jiek:
-        specifier: ^2.1.5
-        version: 2.1.5(@pnpm/filter-workspace-packages@7.2.14(@pnpm/logger@5.2.0))(@rollup/plugin-terser@0.4.4(rollup@4.13.2))(@types/node@18.19.49)(esbuild-register@3.6.0(esbuild@0.21.5))(postcss@8.4.47)(rollup-plugin-esbuild@6.1.1(esbuild@0.21.5)(rollup@4.13.2))(rollup-plugin-postcss@4.0.2(postcss@8.4.47))(typescript@5.7.2)
+        specifier: ^2.1.11
+        version: 2.1.11(@pnpm/filter-workspace-packages@7.2.14(@pnpm/logger@5.2.0))(@rollup/plugin-terser@0.4.4(rollup@4.13.2))(@types/node@18.19.49)(esbuild-register@3.6.0(esbuild@0.21.5))(postcss@8.4.47)(rollup-plugin-esbuild@6.1.1(esbuild@0.21.5)(rollup@4.13.2))(rollup-plugin-postcss@4.0.2(postcss@8.4.47))(typescript@5.7.2)
       rollup-plugin-esbuild:
         specifier: ^6.1.1
         version: 6.1.1(esbuild@0.21.5)(rollup@4.13.2)
@@ -2108,11 +2108,11 @@ packages:
     resolution: {integrity: sha512-LpB/54B+/2J5hqQ7imZHfdU31OlgQqx7ZicVlkm9kzg9/w8GKLEcFfJl/t7DCEDueOyBAD6zCCwTO6Fzs0NoEQ==}
     engines: {node: '>=16'}
 
-  jiek@2.1.5:
-    resolution: {integrity: sha512-nDNxg9t0pljXApBAwtdiqAdv7VA7Ve7kP0/RLxoiVN7U4YRlolVxmD3STf2DLkqYhrnKCbxIVqu7CJXoFUj8iw==}
+  jiek@2.1.11:
+    resolution: {integrity: sha512-Uc2thivfpwqAGkfRxtSuVN0CumwQCXRn22gdeo9NzDe9if4qMhQR1AJwFCs5hvZmkSIZA/kwWJ8m7khBysMYRA==}
     hasBin: true
     peerDependencies:
-      '@pnpm/filter-workspace-packages': ^7.2.13
+      '@pnpm/filter-workspace-packages': ^7.2.13||^8.0.0||^9.0.0||^10.0.0
       '@rollup/plugin-terser': ^0.4.4
       esbuild-register: ^3.5.0
       postcss: ^8.4.47
@@ -5849,7 +5849,7 @@ snapshots:
   isexe@3.1.1:
     optional: true
 
-  jiek@2.1.5(@pnpm/filter-workspace-packages@7.2.14(@pnpm/logger@5.2.0))(@rollup/plugin-terser@0.4.4(rollup@4.13.2))(@types/node@18.19.49)(esbuild-register@3.6.0(esbuild@0.21.5))(postcss@8.4.47)(rollup-plugin-esbuild@6.1.1(esbuild@0.21.5)(rollup@4.13.2))(rollup-plugin-postcss@4.0.2(postcss@8.4.47))(typescript@5.7.2):
+  jiek@2.1.11(@pnpm/filter-workspace-packages@7.2.14(@pnpm/logger@5.2.0))(@rollup/plugin-terser@0.4.4(rollup@4.13.2))(@types/node@18.19.49)(esbuild-register@3.6.0(esbuild@0.21.5))(postcss@8.4.47)(rollup-plugin-esbuild@6.1.1(esbuild@0.21.5)(rollup@4.13.2))(rollup-plugin-postcss@4.0.2(postcss@8.4.47))(typescript@5.7.2):
     dependencies:
       '@inquirer/prompts': 7.1.0(@types/node@18.19.49)
       '@jiek/pkger': 0.2.1
