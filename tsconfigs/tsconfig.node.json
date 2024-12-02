@@ -14,6 +14,8 @@
   ],
   "include": [
     "../scripts/**/*.ts",
+    "../.jiek.config.ts",
+    "../.jiek.workspace.ts",
     "../vitest.config.ts",
     "../vitest.workspace.ts",
     "../website/vite.config.ts",
